@@ -85,7 +85,7 @@ class EnvelopeFactory {
             "." +
             data.baseType.substr(0, data.baseType.length - 4);
         envelope.tags = this.getTags(context, telemetry.tagOverrides);
-        envelope.time = (new Date()).toISOString();
+        envelope.time = (telemetry.time || new Date()).toISOString();
         envelope.ver = 1;
         envelope.sampleRate = config ? config.samplingPercentage : 100;
 
